@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 14:23:19 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/01 16:36:33 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/02 22:09:13 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,26 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
+# include <stdio.h>
+
+typedef struct s_tab
+{
+	int	*tab_a;
+	int	*tab_b;
+	int	len;
+}				t_tab;
 
 int		*ft_calloc(size_t len);
 size_t	ft_strlen(const char *str);
-int		**create_tab(int len, char **argv);
-int		**fill_tab(int **tab, char **argv);
-int		ft_atoi(const char *num);
+int		*fill_tab(int *tab, char **argv);
+int		ft_atoi(char *num);
 void	ft_putstr(char	*s);
-void	panic_button(void);
+void	panic_button(t_tab *tabs);
+void	ft_free(int **ptr);
+int		check_argv(int argc, char **argv);
+int		ft_isdigit(char n);
+int		ft_strncmp(char *s1, char *s2, size_t n);
+void	input_error(void);
 
 #endif

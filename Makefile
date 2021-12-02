@@ -2,7 +2,10 @@
 #[PUSH_SWAP] Fonctions partie principale#
 #=======================================#
 
-SRC_PUSH_SWAP = 
+SRC_PUSH_SWAP = check_argv.c fill_tab.c ft_atoi.c ft_calloc.c \
+				ft_free.c ft_isdigit.c ft_putstr.c ft_strlen.c push_swap.c \
+				red_button.c ft_strncmp.c input_error.c
+
 OBJS_PUSH_SWAP = ${SRC_PUSH_SWAP:.c=.o}
 
 #====#
@@ -11,7 +14,7 @@ OBJS_PUSH_SWAP = ${SRC_PUSH_SWAP:.c=.o}
 
 NAME = push_swap
 CFLAGS = -Wall -Wextra -Werror
-SANIFLAG = -fsanitize=adress -g
+SANIFLAG = -fsanitize=address -g
 
 #=========#
 #Commandes#

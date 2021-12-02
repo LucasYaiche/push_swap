@@ -6,26 +6,26 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 14:27:39 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/01 16:44:24 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/02 22:08:17 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(int a)
-{
-	return ;
-}
-
 int	main(int argc, char **argv)
 {
-	int	**a;
-	int	**b;
-	int	i;
+	t_tab	tabs;
+	int		i;
 
-	argv++;
-	argc--;
-	*a = create_tab(argc, &argv);
-	*b = create_tab(argc, &argv);
-	
+	if (argc <= 1 || !check_argv(--argc, ++argv))
+		input_error();
+	tabs.len = argc;
+	tabs.tab_a = ft_calloc(argc + 1);
+	tabs.tab_b = ft_calloc(argc + 1);
+	if (!tabs.tab_a || !tabs.tab_b)
+		panic_button(&tabs);
+	fill_tab(tabs.tab_a, argv);
+	i = -1;
+	while (tabs.tab_a[++i])
+		printf("%i\n", tabs.tab_a[i]);
 }
