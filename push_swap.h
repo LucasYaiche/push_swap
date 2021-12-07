@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 14:23:19 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/02 22:09:13 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/07 18:19:07 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int		check_argv(int argc, char **argv);
 int		ft_isdigit(char n);
 int		ft_strncmp(char *s1, char *s2, size_t n);
 void	input_error(void);
+int		check_recu(t_tab *tabs);
 
 #endif
