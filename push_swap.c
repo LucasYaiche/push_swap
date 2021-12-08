@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 14:27:39 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/07 18:35:29 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/08 12:18:04 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 	i = -1;
 	while (tabs.tab_a[++i])
 		printf("%i\n", tabs.tab_a[i]);
-	if (check_recu(&tabs))
+	if (check_recu(&tabs, 1000))
 		printf("recu: oui\n");
 	else
 		printf("recu: non\n");

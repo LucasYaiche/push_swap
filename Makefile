@@ -2,7 +2,7 @@
 #[PUSH_SWAP] Fonctions partie principale#
 #=======================================#
 
-SRC_PUSH_SWAP = check_argv.c fill_tab.c ft_atoi.c ft_calloc.c \
+SRC_PUSH_SWAP = check_argv.c fill_tab.c ft_atoi.c ft_calloc.c find_biggest.c\
 				ft_free.c ft_isdigit.c ft_putstr.c ft_strlen.c push_swap.c \
 				red_button.c ft_strncmp.c input_error.c check_recu.c
 

@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   find_place.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 17:49:21 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/08 12:17:35 by lyaiche          ###   ########.fr       */
+/*   Created: 2021/12/08 11:26:37 by lyaiche           #+#    #+#             */
+/*   Updated: 2021/12/08 11:27:07 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	what_case(t_tab *tabs)
+int	find_place(int	*tab)
 {
 	int	place;
+	int	number;
 
-	place = find_place(tabs->tab_a);
-	while (place >= 1)
+	number = find_biggest(tab);
+	place = 1;
+	while (number > 10)
 	{
-		if (check_recu(tabs, place))
-		{
-			fast_sort();
-			break ;
-		}
-		else
-		{
-			slow_sort();
-			place /= 10;
-			if (place == 1)
-				place--;
-		}
-	}	
+		number /= 10;
+		place *= 10;
+	}
+	return (place);
 }

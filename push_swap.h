@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 14:23:19 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/07 18:19:07 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/08 11:27:49 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int		check_argv(int argc, char **argv);
 int		ft_isdigit(char n);
 int		ft_strncmp(char *s1, char *s2, size_t n);
 void	input_error(void);
-int		check_recu(t_tab *tabs);
+int		check_recu(t_tab *tabs, int place);
+int		find_biggest(int *tab);
+int		find_place(int	*tab);
 
 #endif

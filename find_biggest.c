@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   find_biggest.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 17:49:21 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/08 12:17:35 by lyaiche          ###   ########.fr       */
+/*   Created: 2021/12/08 11:20:00 by lyaiche           #+#    #+#             */
+/*   Updated: 2021/12/08 11:27:19 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	what_case(t_tab *tabs)
+int	find_biggest(int *tab)
 {
-	int	place;
+	int	i;
+	int	biggest;
 
-	place = find_place(tabs->tab_a);
-	while (place >= 1)
+	i = -1;
+	biggest = tab[0];
+	while (tab[++i])
 	{
-		if (check_recu(tabs, place))
-		{
-			fast_sort();
-			break ;
-		}
-		else
-		{
-			slow_sort();
-			place /= 10;
-			if (place == 1)
-				place--;
-		}
-	}	
+		if (tab[i] > biggest)
+			biggest = tab[i];
+	}
+	return (biggest);
 }
