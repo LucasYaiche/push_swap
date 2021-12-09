@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   up.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 17:49:21 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/08 18:58:46 by lyaiche          ###   ########.fr       */
+/*   Created: 2021/12/09 18:40:53 by lyaiche           #+#    #+#             */
+/*   Updated: 2021/12/09 18:52:54 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	what_case(t_tab *tabs)
+void	up(int *tab)
 {
-	if (tabs->len == 2)
-		case_2(tabs);
-	else if (tabs->len == 3)
-		case_3(tabs);
-	else if (tabs->len == 4)
-		case_4(tabs);
-	else if (tabs->len == 5)
-		case_5(tabs);
+	int	temp;
+	int	last;
+	int	len;
+
+	len = 0;
+	while (tab[len + 1])
+	{
+		tab[len] = tab[len + 1];
+		len++;
+	}
+	tab[len] = '\0';
 }

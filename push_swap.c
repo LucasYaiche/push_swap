@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 14:27:39 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/08 12:18:04 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/08 18:43:20 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ int	main(int argc, char **argv)
 	if (!tabs.tab_a || !tabs.tab_b)
 		panic_button(&tabs);
 	fill_tab(tabs.tab_a, argv);
+	if (issort(&tabs))
+		panic_button(&tabs);
+	/*
 	i = -1;
 	while (tabs.tab_a[++i])
 		printf("%i\n", tabs.tab_a[i]);
@@ -32,4 +35,5 @@ int	main(int argc, char **argv)
 		printf("recu: oui\n");
 	else
 		printf("recu: non\n");
+		*/
 }

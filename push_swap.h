@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 14:23:19 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/08 11:27:49 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/09 19:04:46 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,13 @@ void	input_error(void);
 int		check_recu(t_tab *tabs, int place);
 int		find_biggest(int *tab);
 int		find_place(int	*tab);
+int		issort(t_tab *tabs);
+int		find_lowest(int *tab);
+void	down(int *tab);
+void	sa(t_tab *tabs);
+void	pa(t_tab *tabs);
+void	pb(t_tab *tabs);
+void	rra(t_tab *tabs);
+void	ra(t_tab *tabs);
 
 #endif
