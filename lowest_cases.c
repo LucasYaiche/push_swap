@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 11:42:23 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/09 19:14:01 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/10 13:11:20 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	case_3(t_tab *tabs)
 		&& find_biggest(tabs->tab_a) == tabs->tab_a[1])
 	{
 		rra(tabs);
-		ra(tabs);
+		sa(tabs);
 	}
 	else if (find_biggest(tabs->tab_a) == tabs->tab_a[0]
 		&& find_lowest(tabs->tab_a) == tabs->tab_a[1])
@@ -32,8 +32,8 @@ void	case_3(t_tab *tabs)
 	}
 	else if (find_biggest(tabs->tab_a) == tabs->tab_a[0])
 	{
-		rra(tabs);
-		rra(tabs);
+		ra(tabs);
+		sa(tabs);
 	}
 	else if (find_biggest(tabs->tab_a) == tabs->tab_a[1]
 		&& find_lowest(tabs->tab_a) == tabs->tab_a[2])

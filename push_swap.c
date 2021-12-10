@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 14:27:39 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/10 12:05:23 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/10 12:49:28 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,8 @@ int	main(int argc, char **argv)
 	fill_tab(tabs.tab_a, argv);
 	if (issort(&tabs))
 		panic_button(&tabs);
-	write(1, "salut\n", 7);
 	what_case(&tabs);
 	i = -1;
 	while (tabs.tab_a[++i])
-		printf("%i\n", tabs.tab_a[i]);
+		printf("%i ", tabs.tab_a[i]);
 }

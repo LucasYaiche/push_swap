@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 14:20:05 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/09 19:17:43 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/10 13:25:18 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,13 @@ void	pa(t_tab *tabs)
 
 	temp = tabs->tab_b[0];
 	down(tabs->tab_a);
+	int i = 7;
+	while (--i > 0)
+		printf("%i ", tabs->tab_a[i]);
+	printf("\n");
+	// KC 
 	tabs->tab_a[0] = temp;
+	tabs->tab_b[0] = '\0';
 	up(tabs->tab_b);
 }
 
@@ -38,6 +44,7 @@ void	pb(t_tab *tabs)
 	temp = tabs->tab_a[0];
 	down(tabs->tab_b);
 	tabs->tab_b[0] = temp;
+	tabs->tab_a[0] = '\0';
 	up(tabs->tab_a);
 }
 
