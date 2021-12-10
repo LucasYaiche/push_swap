@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 18:40:53 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/09 18:52:54 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/09 19:15:26 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	up(int *tab)
 {
-	int	temp;
-	int	last;
 	int	len;
 
 	len = 0;

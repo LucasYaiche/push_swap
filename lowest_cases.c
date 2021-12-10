@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 11:42:23 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/09 19:09:12 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/09 19:14:01 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	case_4_2(t_tab *tabs)
 	}
 }
 
-void	case_4_1(t_tab *tabs)
+void	case_4(t_tab *tabs)
 {
 	if (find_lowest(tabs->tab_a) == tabs->tab_a[0])
 	{
@@ -96,7 +96,7 @@ void	case_4_1(t_tab *tabs)
 		pa(tabs);
 	}
 	else
-		case_4_1(tabs);
+		case_4_2(tabs);
 }
 
 void	case_5(t_tab *tabs)

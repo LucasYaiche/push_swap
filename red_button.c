@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 16:28:37 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/02 19:52:12 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/09 19:19:21 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	panic_button(t_tab *tabs)
 {
-	write(1, "salut\n", 8);
 	if (tabs->tab_a)
 		ft_free(&(tabs->tab_a));
 	if (tabs->tab_b)

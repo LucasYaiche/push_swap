@@ -5,7 +5,7 @@
 SRC_PUSH_SWAP = check_argv.c fill_tab.c ft_atoi.c ft_calloc.c find_biggest.c\
 				ft_free.c ft_isdigit.c ft_putstr.c ft_strlen.c push_swap.c \
 				red_button.c ft_strncmp.c input_error.c lowest_cases.c up.c \
-				down.c sort.c moves.c
+				down.c sort.c moves.c issort.c find_lowest.c
 
 OBJS_PUSH_SWAP = ${SRC_PUSH_SWAP:.c=.o}
 

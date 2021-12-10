@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 14:23:19 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/09 19:04:46 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/09 19:16:56 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,12 @@ void	pa(t_tab *tabs);
 void	pb(t_tab *tabs);
 void	rra(t_tab *tabs);
 void	ra(t_tab *tabs);
+void	what_case(t_tab *tabs);
+void	case_2(t_tab *tabs);
+void	case_3(t_tab *tabs);
+void	case_4(t_tab *tabs);
+void	case_5(t_tab *tabs);
+void	up(int *tab);
+void	down(int *tab);
 
 #endif

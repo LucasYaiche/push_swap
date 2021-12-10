@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 14:20:05 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/09 19:03:56 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/09 19:17:43 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 
 void	sa(t_tab *tabs)
 {
-	int	*temp;
+	int	temp;
 
-	*temp = tabs->tab_a[0];
+	temp = tabs->tab_a[0];
 	tabs->tab_a[0] = tabs->tab_a[1];
-	tabs->tab_a[1] = *temp;
+	tabs->tab_a[1] = temp;
 }
 
 void	pa(t_tab *tabs)
 {
-	int	i;
 	int	temp;
 
 	temp = tabs->tab_b[0];
@@ -34,7 +33,6 @@ void	pa(t_tab *tabs)
 
 void	pb(t_tab *tabs)
 {
-	int	i;
 	int	temp;
 
 	temp = tabs->tab_a[0];
@@ -66,7 +64,6 @@ void	rra(t_tab *tabs)
 
 void	ra(t_tab *tabs)
 {
-	int	temp;
 	int	first;
 	int	len;
 
