@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lowest_cases.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lucasyaiche <lucasyaiche@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 11:42:23 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/10 13:11:20 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/11 19:08:22 by lucasyaiche      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,9 @@ void	case_3(t_tab *tabs)
 	{
 		rra(tabs);
 	}
-	else if (find_biggest(tabs->tab_a) == tabs->tab_a[2])
-	{
+	else if (find_biggest(tabs->tab_a) == tabs->tab_a[2]
+		&& find_lowest(tabs->tab_a) == tabs->tab_a[1])
 		sa(tabs);
-	}
 }
 
 void	case_4_2(t_tab *tabs)
@@ -101,8 +100,17 @@ void	case_4(t_tab *tabs)
 
 void	case_5(t_tab *tabs)
 {
-	while (find_lowest(tabs->tab_a) != tabs->tab_a[0])
-		ra(tabs);
+	int	count;
+
+	count = 0;
+	while (find_lowest(tabs->tab_a) != tabs->tab_a[count] && count < 3)
+		count++;
+	if (count < 3)
+		while (find_lowest(tabs->tab_a) != tabs->tab_a[0])
+			ra(tabs);
+	else
+		while (find_lowest(tabs->tab_a) != tabs->tab_a[0])
+			rra(tabs);
 	pb(tabs);
 	case_4(tabs);
 	pa(tabs);

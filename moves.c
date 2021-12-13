@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lucasyaiche <lucasyaiche@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 14:20:05 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/10 13:25:18 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/11 18:56:13 by lucasyaiche      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	sa(t_tab *tabs)
 	temp = tabs->tab_a[0];
 	tabs->tab_a[0] = tabs->tab_a[1];
 	tabs->tab_a[1] = temp;
+	ft_putstr("sa\n");
 }
 
 void	pa(t_tab *tabs)
@@ -27,14 +28,10 @@ void	pa(t_tab *tabs)
 
 	temp = tabs->tab_b[0];
 	down(tabs->tab_a);
-	int i = 7;
-	while (--i > 0)
-		printf("%i ", tabs->tab_a[i]);
-	printf("\n");
-	// KC 
 	tabs->tab_a[0] = temp;
 	tabs->tab_b[0] = '\0';
 	up(tabs->tab_b);
+	ft_putstr("pa\n");
 }
 
 void	pb(t_tab *tabs)
@@ -46,6 +43,7 @@ void	pb(t_tab *tabs)
 	tabs->tab_b[0] = temp;
 	tabs->tab_a[0] = '\0';
 	up(tabs->tab_a);
+	ft_putstr("pb\n");
 }
 
 void	rra(t_tab *tabs)
@@ -67,6 +65,7 @@ void	rra(t_tab *tabs)
 		tabs->tab_a[len-- + 1] = temp;
 	}
 	tabs->tab_a[0] = last;
+	ft_putstr("rra\n");
 }
 
 void	ra(t_tab *tabs)
@@ -82,4 +81,5 @@ void	ra(t_tab *tabs)
 		len++;
 	}
 	tabs->tab_a[len] = first;
+	ft_putstr("ra\n");
 }
