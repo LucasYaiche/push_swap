@@ -6,24 +6,24 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 13:34:29 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/09 19:31:33 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/16 13:59:41 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	issort(t_tab *tabs)
+int	issort(int *tab, int len)
 {
 	int	i;
 	int	temp;
 
-	i = 0;
-	temp = tabs->tab_a[0];
-	while (tabs->tab_a[++i])
+	i = -1;
+	temp = tab[0];
+	while (++i < len)
 	{
-		if (temp > tabs->tab_a[i])
+		if (temp > tab[i])
 			return (0);
-		temp = tabs->tab_a[i];
+		temp = tab[i];
 	}
 	return (1);
 }

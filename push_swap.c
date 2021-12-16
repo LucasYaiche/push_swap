@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 14:27:39 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/10 12:49:28 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/16 17:49:35 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,22 @@
 int	main(int argc, char **argv)
 {
 	t_tab	tabs;
-	int		i;
 
 	if (argc <= 1 || !check_argv(--argc, ++argv))
 		input_error();
-	tabs.len = argc;
+	tabs.len_a = argc;
+	tabs.len_b = 0;
 	tabs.tab_a = ft_calloc(argc + 1);
 	tabs.tab_b = ft_calloc(argc + 1);
 	if (!tabs.tab_a || !tabs.tab_b)
 		panic_button(&tabs);
-	fill_tab(tabs.tab_a, argv);
-	if (issort(&tabs))
-		panic_button(&tabs);
+	fill_tab(&tabs, argv);
+	if (issort(tabs.tab_a, tabs.len_a))
+		end(&tabs);
 	what_case(&tabs);
-	i = -1;
-	while (tabs.tab_a[++i])
-		printf("%i ", tabs.tab_a[i]);
+	// int i = -1;
+	// while (++i < tabs.len_a)
+	// 	printf("%i ", tabs.tab_a[i]);
+	// printf("\n");
 }
+

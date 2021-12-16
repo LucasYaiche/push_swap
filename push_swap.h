@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 14:23:19 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/09 19:16:56 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/16 14:32:15 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,26 +23,26 @@ typedef struct s_tab
 {
 	int	*tab_a;
 	int	*tab_b;
-	int	len;
+	int	len_a;
+	int	len_b;
+	int	*tab_index;
 }				t_tab;
 
 int		*ft_calloc(size_t len);
 size_t	ft_strlen(const char *str);
-int		*fill_tab(int *tab, char **argv);
+void	fill_tab(t_tab *tabs, char **argv);
 int		ft_atoi(char *num);
 void	ft_putstr(char	*s);
+void	ft_putstr_error(char *s);
 void	panic_button(t_tab *tabs);
 void	ft_free(int **ptr);
 int		check_argv(int argc, char **argv);
 int		ft_isdigit(char n);
 int		ft_strncmp(char *s1, char *s2, size_t n);
 void	input_error(void);
-int		check_recu(t_tab *tabs, int place);
-int		find_biggest(int *tab);
-int		find_place(int	*tab);
-int		issort(t_tab *tabs);
-int		find_lowest(int *tab);
-void	down(int *tab);
+int		find_biggest(int *tab, int len);
+int		issort(int *tab, int len);
+int		find_lowest(int *tab, int len);
 void	sa(t_tab *tabs);
 void	pa(t_tab *tabs);
 void	pb(t_tab *tabs);
@@ -53,7 +53,10 @@ void	case_2(t_tab *tabs);
 void	case_3(t_tab *tabs);
 void	case_4(t_tab *tabs);
 void	case_5(t_tab *tabs);
-void	up(int *tab);
-void	down(int *tab);
+void	up(int *tab, int len);
+void	down(int *tab, int len);
+void	ft_radixsort(t_tab *tabs);
+void	index_list(t_tab *tabs);
+void	end(t_tab *tabs);
 
 #endif

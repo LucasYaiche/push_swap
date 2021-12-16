@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 19:57:02 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/02 20:12:03 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/14 15:13:17 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	input_error(void)
 {
-	ft_putstr("Error\n");
+	ft_putstr_error("Error\n");
 	exit(0);
 }

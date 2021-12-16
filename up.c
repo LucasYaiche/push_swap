@@ -6,21 +6,21 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 18:40:53 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/09 19:15:26 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/16 14:42:20 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	up(int *tab)
+void	up(int *tab, int len)
 {
-	int	len;
+	int	i;
 
-	len = 0;
-	while (tab[len + 1])
+	i = 0;
+	while (i < len)
 	{
-		tab[len] = tab[len + 1];
-		len++;
+		tab[i] = tab[i + 1];
+		i++;
 	}
-	tab[len] = '\0';
+	tab[i] = '\0';
 }

@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 17:49:21 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/09 19:14:07 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/16 13:38:40 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 
 void	what_case(t_tab *tabs)
 {
-	if (tabs->len == 2)
+	if (tabs->len_a == 2)
 		case_2(tabs);
-	else if (tabs->len == 3)
+	else if (tabs->len_a == 3)
 		case_3(tabs);
-	else if (tabs->len == 4)
+	else if (tabs->len_a == 4)
 		case_4(tabs);
-	else if (tabs->len == 5)
+	else if (tabs->len_a == 5)
 		case_5(tabs);
+	else
+	{
+		index_list(tabs);
+		ft_radixsort(tabs);
+	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucasyaiche <lucasyaiche@student.42.fr>    +#+  +:+       +#+        */
+/*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 14:20:05 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/11 18:56:13 by lucasyaiche      ###   ########.fr       */
+/*   Updated: 2021/12/16 14:52:55 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,52 @@
 void	sa(t_tab *tabs)
 {
 	int	temp;
+	int	i;
 
-	temp = tabs->tab_a[0];
-	tabs->tab_a[0] = tabs->tab_a[1];
-	tabs->tab_a[1] = temp;
-	ft_putstr("sa\n");
+	i = 0;
+	while (i < tabs->len_a)
+		i++;
+	if (i > 1)
+	{
+		temp = tabs->tab_a[0];
+		tabs->tab_a[0] = tabs->tab_a[1];
+		tabs->tab_a[1] = temp;
+		ft_putstr("sa\n");
+	}
 }
 
 void	pa(t_tab *tabs)
 {
 	int	temp;
 
-	temp = tabs->tab_b[0];
-	down(tabs->tab_a);
-	tabs->tab_a[0] = temp;
-	tabs->tab_b[0] = '\0';
-	up(tabs->tab_b);
-	ft_putstr("pa\n");
+	if (tabs->len_b != 0)
+	{
+		temp = tabs->tab_b[0];
+		down(tabs->tab_a, tabs->len_a);
+		tabs->tab_a[0] = temp;
+		tabs->tab_b[0] = '\0';
+		up(tabs->tab_b, tabs->len_b);
+		tabs->len_a++;
+		tabs->len_b--;
+		ft_putstr("pa\n");
+	}
 }
 
 void	pb(t_tab *tabs)
 {
 	int	temp;
 
-	temp = tabs->tab_a[0];
-	down(tabs->tab_b);
-	tabs->tab_b[0] = temp;
-	tabs->tab_a[0] = '\0';
-	up(tabs->tab_a);
-	ft_putstr("pb\n");
+	if (tabs->len_a != 0)
+	{
+		temp = tabs->tab_a[0];
+		down(tabs->tab_b, tabs->len_b);
+		tabs->tab_b[0] = temp;
+		tabs->tab_a[0] = '\0';
+		up(tabs->tab_a, tabs->len_a);
+		tabs->len_a--;
+		tabs->len_b++;
+		ft_putstr("pb\n");
+	}
 }
 
 void	rra(t_tab *tabs)
@@ -52,10 +69,7 @@ void	rra(t_tab *tabs)
 	int	last;
 	int	len;
 
-	len = 0;
-	while (tabs->tab_a[len])
-		len++;
-	len--;
+	len = tabs->len_a - 1;
 	last = tabs->tab_a[len];
 	tabs->tab_a[len] = 0;
 	while (len >= 0)
@@ -75,11 +89,11 @@ void	ra(t_tab *tabs)
 
 	len = 0;
 	first = tabs->tab_a[0];
-	while (tabs->tab_a[len + 1])
+	while (len < tabs->len_a)
 	{
 		tabs->tab_a[len] = tabs->tab_a[len + 1];
 		len++;
 	}
-	tabs->tab_a[len] = first;
+	tabs->tab_a[len - 1] = first;
 	ft_putstr("ra\n");
 }
