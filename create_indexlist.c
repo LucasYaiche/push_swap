@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 18:41:21 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/16 17:49:04 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/17 11:50:58 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,6 @@ int	*create_tab(t_tab *tabs)
 	i = -1;
 	while (++i < tabs->len_a)
 		returned[i] = tabs->tab_a[i];
-	// i = -1;
-	// while (++i < tabs->len_a)
-	// 	printf("%i ", returned[i]);
-	// printf("\n");
 	return (returned);
 }
 
@@ -35,10 +31,6 @@ void	index_list_2(t_tab *tabs)
 	int	i;
 	int	j;
 
-	// i = -1;
-	// while (++i < tabs->len_a)
-	// 	printf("%i ", tabs->tab_index[i]);
-	// printf("\n");
 	i = -1;
 	while (++i < tabs->len_a)
 	{
@@ -47,10 +39,6 @@ void	index_list_2(t_tab *tabs)
 			j++;
 		tabs->tab_a[i] = j;
 	}
-	// i = -1;
-	// while (++i < tabs->len_a)
-	// 	printf("%i ", tabs->tab_a[i]);
-	// printf("\n");
 }
 
 void	index_list(t_tab *tabs)
@@ -72,10 +60,5 @@ void	index_list(t_tab *tabs)
 			}
 		}
 	}
-	//up(tabs->tab_index, tabs->len_a);
-	// i = -1;
-	// while (++i <= tabs->len_a)
-	// printf("%i ", tabs->tab_index[i]);
-	// printf("\n");
 	index_list_2(tabs);
 }

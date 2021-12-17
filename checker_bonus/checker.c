@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 14:27:39 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/17 11:50:36 by lyaiche          ###   ########.fr       */
+/*   Created: 2021/12/17 13:45:08 by lyaiche           #+#    #+#             */
+/*   Updated: 2021/12/17 16:06:54 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 int	main(int argc, char **argv)
 {
-	t_tab	tabs;
+	int	fd;
 
-	if (argc <= 1 || !check_argv(--argc, ++argv))
-		input_error();
-	tabs.len_a = argc;
-	tabs.len_b = 0;
-	tabs.tab_a = ft_calloc(argc + 1);
-	tabs.tab_b = ft_calloc(argc + 1);
-	if (!tabs.tab_a || !tabs.tab_b)
-		panic_button(&tabs);
-	fill_tab(&tabs, argv);
-	if (issort(tabs.tab_a, tabs.len_a))
-		end(&tabs);
-	what_case(&tabs);
+	fd = 0;
+	while()
 }
