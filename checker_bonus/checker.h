@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lucasyaiche <lucasyaiche@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 13:45:26 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/17 15:16:02 by lyaiche          ###   ########.fr       */
+/*   Updated: 2021/12/29 21:35:09 by lucasyaiche      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <limits.h>
 # include <unistd.h>
+# include "push_swap.h"
 
 typedef struct s_tab
 {

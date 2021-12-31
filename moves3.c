@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   moves3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucasyaiche <lucasyaiche@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/17 13:45:08 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/29 21:35:42 by lucasyaiche      ###   ########.fr       */
+/*   Created: 2021/12/29 22:49:35 by lucasyaiche       #+#    #+#             */
+/*   Updated: 2021/12/29 22:58:47 by lucasyaiche      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	ss(t_tab *tabs)
 {
-	int	fd;
+	sa(tabs);
+	sb(tabs);
+	ft_putstr("ss\n");
+}
 
-	fd = 0;
-	
-	while()
+void	rr(t_tab *tabs)
+{
+	ra(tabs);
+	rb(tabs);
+	ft_putstr("rr\n");
+}
+
+void	rrr(t_tab *tabs)
+{
+	rra(tabs);
+	rrb(tabs);
+	ft_putstr("rrr\n");
 }
