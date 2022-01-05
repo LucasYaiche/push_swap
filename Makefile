@@ -5,8 +5,8 @@
 SRC_PUSH_SWAP = check_argv.c fill_tab.c ft_atoi.c ft_calloc.c find_biggest.c\
 				ft_free.c ft_isdigit.c ft_putstr.c ft_strlen.c push_swap.c \
 				red_button.c ft_strncmp.c input_error.c lowest_cases.c up.c \
-				down.c sort.c moves.c issort.c find_lowest.c ft_putstr_error.c \
-				ft_radixsort.c create_indexlist.c end.c
+				down.c sort.c moves1.c moves2.c moves3.c issort.c find_lowest.c  \
+				ft_radixsort.c create_indexlist.c end.c ft_putstr_error.c
 
 OBJS_PUSH_SWAP =${addprefix ${OBJDIR}/, ${SRC_PUSH_SWAP:.c=.o}}
 
@@ -21,11 +21,7 @@ SANIFLAG = -fsanitize=address -g
 
 #=========#
 #Commandes#
-#=========#
-# .c.o:
-# 					@gcc ${CFLAGS} -c $< -o ${<:.c=.o}
-# 					@printf "\e[32;3m.\e[0m"
-					
+#=========#					
 
 ${OBJDIR}/%.o : %.c
 					@gcc ${CFLAGS} -c $< -o ${addprefix ${OBJDIR}/, ${<:.c=.o}}
@@ -51,4 +47,4 @@ fclean:				clean
 
 re:					fclean all
 
-.PHONY:				all clean fclean re 
+.PHONY:				all clean fclean re
