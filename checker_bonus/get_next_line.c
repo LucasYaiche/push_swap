@@ -6,13 +6,13 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 14:42:58 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/17 15:16:44 by lyaiche          ###   ########.fr       */
+/*   Updated: 2022/01/12 16:02:32 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	ft_free(char **ptr)
+void	ft_free_char(char **ptr)
 {
 	free(*ptr);
 	*ptr = NULL;
@@ -20,7 +20,7 @@ void	ft_free(char **ptr)
 
 char	*get_next_line_4(char *returned, char **keep, char	*line, int i)
 {
-	ft_free(keep);
+	ft_free_char(keep);
 	*keep = ft_strdup(&line[i + 1]);
 	if (!*keep)
 		return (NULL);
@@ -39,7 +39,7 @@ char	*get_next_line_3(char **keep, char *line, int inspect)
 	i = 0;
 	while (line[i] && line[i] != '\n')
 		i++;
-	returned = ft_calloc(i + 2);
+	returned = ft_calloc_char(i + 2);
 	if (!returned)
 		return (NULL);
 	if (line[i] == '\n' && line[i + 1] != '\0')
@@ -49,7 +49,7 @@ char	*get_next_line_3(char **keep, char *line, int inspect)
 		i = -1;
 		while (++i <= inspect)
 			returned[i] = line[i];
-		ft_free(keep);
+		ft_free_char(keep);
 	}
 	return (returned);
 }
@@ -61,7 +61,7 @@ char	*get_next_line_2(char **keep, int array_len, int inspect)
 
 	if (array_len == -1)
 	{
-		ft_free(keep);
+		ft_free_char(keep);
 		return (NULL);
 	}
 	if (!*keep && array_len == 0)
@@ -71,12 +71,12 @@ char	*get_next_line_2(char **keep, int array_len, int inspect)
 		return (NULL);
 	if (inspect == -1 && array_len == 0)
 	{
-		ft_free(keep);
+		ft_free_char(keep);
 		returned = (ft_strdup(line));
 	}
 	else
 		returned = get_next_line_3(keep, line, inspect);
-	ft_free(&line);
+	ft_free_char(&line);
 	return (returned);
 }
 
@@ -94,7 +94,7 @@ char	*get_next_line(int fd)
 	buf = NULL;
 	while (inspect == -1)
 	{
-		buf = ft_calloc(BUFFER_SIZE + 1);
+		buf = ft_calloc_char(BUFFER_SIZE + 1);
 		if (!buf)
 			return (NULL);
 		array_len = read(fd, buf, BUFFER_SIZE);
@@ -102,8 +102,8 @@ char	*get_next_line(int fd)
 			break ;
 		keep = ft_strjoin(keep, buf);
 		inspect = check(keep, '\n');
-		ft_free(&buf);
+		ft_free_char(&buf);
 	}
-	ft_free(&buf);
+	ft_free_char(&buf);
 	return (get_next_line_2(&keep, array_len, inspect));
 }

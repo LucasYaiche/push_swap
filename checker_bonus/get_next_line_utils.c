@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 14:15:41 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/17 15:16:39 by lyaiche          ###   ########.fr       */
+/*   Updated: 2022/01/12 16:02:26 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strdup(char *s)
 		return (NULL);
 	len = ft_strlen(s);
 	i = 0;
-	s2 = ft_calloc(len + 1);
+	s2 = ft_calloc_char(len + 1);
 	if (!s2)
 		return (NULL);
 	while (i < len)
@@ -59,29 +59,18 @@ char	*ft_strjoin(char *s1, char *s2)
 		return (ft_strdup(s2));
 	if (!s2)
 		return (ft_strdup(s1));
-	returned = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	returned = ft_calloc_char(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!returned)
 		return (NULL);
 	i = 0;
 	j = -1;
 	while (s1[++j])
 		returned[i++] = s1[j];
-	ft_free(&s1);
+	ft_free_char(&s1);
 	j = -1;
 	while (s2[++j])
 		returned[i++] = s2[j];
 	return (returned);
-}
-
-size_t	ft_strlen(const char *str)
-{
-	int	len;
-
-	len = 0;
-	if (str)
-		while (str[len])
-			len++;
-	return (len);
 }
 
 int	check(char *s, char c)

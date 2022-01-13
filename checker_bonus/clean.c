@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   clean.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 19:08:10 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/02 20:18:20 by lyaiche          ###   ########.fr       */
+/*   Created: 2022/01/13 16:44:38 by lyaiche           #+#    #+#             */
+/*   Updated: 2022/01/13 16:45:38 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-int	ft_strncmp(char *s1, char *s2, size_t n)
+void	clean(t_tab *tabs)
 {
-	while (*s2 && n && (*s1 == *s2))
-	{
-		s1++;
-		s2++;
-		n--;
-	}
-	if (n == 0)
-		return (0);
-	return (*s1 - *s2);
+	if (tabs->tab_a)
+		ft_free(&(tabs->tab_a));
+	if (tabs->tab_b)
+		ft_free(&(tabs->tab_b));
+	if (tabs->tab_index)
+		ft_free(&(tabs->tab_index));
 }
