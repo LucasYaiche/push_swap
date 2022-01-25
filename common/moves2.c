@@ -6,7 +6,7 @@
 /*   By: lucasyaiche <lucasyaiche@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 22:24:26 by lucasyaiche       #+#    #+#             */
-/*   Updated: 2021/12/29 22:49:01 by lucasyaiche      ###   ########.fr       */
+/*   Updated: 2022/01/24 14:55:52 by lucasyaiche      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,19 @@ void	rrb(t_tab *tabs)
 	int	last;
 	int	len;
 
-	len = tabs->len_b - 1;
-	last = tabs->tab_b[len];
-	tabs->tab_b[len] = 0;
-	while (len >= 0)
+	if (tabs->len_b)
 	{
-		temp = tabs->tab_b[len];
-		tabs->tab_b[len] = tabs->tab_b[len + 1];
-		tabs->tab_b[len-- + 1] = temp;
+		last = tabs->tab_b[tabs->len_b];
+		tabs->tab_b[tabs->len_b] = 0;
+		len = tabs->len_b - 1;
+		while (len >= 0)
+		{
+			temp = tabs->tab_b[len];
+			tabs->tab_b[len] = tabs->tab_b[len + 1];
+			tabs->tab_b[len-- + 1] = temp;
+		}
+		tabs->tab_b[0] = last;
 	}
-	tabs->tab_b[0] = last;
 	ft_putstr("rrb\n");
 }
 
@@ -53,13 +56,16 @@ void	rb(t_tab *tabs)
 	int	first;
 	int	len;
 
-	len = 0;
-	first = tabs->tab_b[0];
-	while (len < tabs->len_b)
+	if (tabs->len_b)
 	{
-		tabs->tab_b[len] = tabs->tab_b[len + 1];
-		len++;
+		len = 0;
+		first = tabs->tab_b[0];
+		while (len < tabs->len_b)
+		{
+			tabs->tab_b[len] = tabs->tab_b[len + 1];
+			len++;
+		}
+		tabs->tab_b[len - 1] = first;
 	}
-	tabs->tab_b[len - 1] = first;
 	ft_putstr("rb\n");
 }

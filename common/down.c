@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   down.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lucasyaiche <lucasyaiche@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 16:41:55 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/16 14:33:11 by lyaiche          ###   ########.fr       */
+/*   Updated: 2022/01/23 17:13:56 by lucasyaiche      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,8 @@
 void	down(int *tab, int len)
 {
 	int	temp;
-	int	last;
-	int	len_max;
 
-	len_max = --len;
-	last = tab[len];
+	len--;
 	while (len >= 0)
 	{
 		temp = tab[len];
