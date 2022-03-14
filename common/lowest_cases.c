@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 11:42:23 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/16 16:15:03 by lyaiche          ###   ########.fr       */
+/*   Updated: 2022/03/14 17:19:29 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ void	case_5(t_tab *tabs)
 	while (find_lowest(tabs->tab_a, tabs->len_a) != tabs->tab_a[count]
 		&& count < 3)
 		count++;
-	if (count < 3)
+	if (count <= 3)
 		while (find_lowest(tabs->tab_a, tabs->len_a) != tabs->tab_a[0])
 			ra(tabs);
 	else

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucasyaiche <lucasyaiche@student.42.fr>    +#+  +:+       +#+        */
+/*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 13:45:08 by lyaiche           #+#    #+#             */
-/*   Updated: 2022/01/24 16:47:19 by lucasyaiche      ###   ########.fr       */
+/*   Updated: 2022/03/14 17:52:44 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,27 @@ void	verif(t_tab *tab)
 	i = -1;
 	while (++i < tab->len_a)
 		printf("%i\n", tab->tab_a[i]);
+}
+
+int	main_2(t_tab *tabs, char *line)
+{
+	if (tabs->len_b != 0)
+		panic_button(&tabs);
+	if (line && check_move(line) == 2)
+		panic_button(&tabs);
+	else if (line && !(ft_strncmp(line, "\n", 1))
+		&& issort(tabs->tab_a, tabs->len_a))
+	{
+		clean(&tabs);
+		ft_putstr("OK\n");
+	}
+	else if (line && issort(tabs->tab_a, tabs->len_a) && check_move(line) == 2)
+	{
+		clean(&tabs);
+		ft_putstr("OK\n");
+	}
+	else
+		panic_button(&tabs);
 }
 
 int	main(int argc, char **argv)
@@ -45,21 +66,5 @@ int	main(int argc, char **argv)
 			break ;
 		sort_tab(line, &tabs);
 	}
-	if (tabs.len_b != 0)
-		panic_button(&tabs);
-	if (line && check_move(line) == 2)
-		panic_button(&tabs);
-	else if (line && !(ft_strncmp(line, "\n", 1)) && issort(tabs.tab_a, tabs.len_a))
-	{
-		clean(&tabs);
-		ft_putstr("OK\n");
-	}
-	else if (line && issort(tabs.tab_a, tabs.len_a) && check_move(line) == 2)
-	{
-		write(1,"ici\n", 4);
-		clean(&tabs);
-		ft_putstr("OK\n");
-	}
-	else
-		panic_button(&tabs);
+	main_2(&tabs, line);
 }
