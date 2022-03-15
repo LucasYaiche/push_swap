@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 11:51:12 by lyaiche           #+#    #+#             */
-/*   Updated: 2022/03/14 17:47:08 by lyaiche          ###   ########.fr       */
+/*   Updated: 2022/03/15 22:20:55 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	check_move(char *line)
 			return (0);
 		else if (ft_strncmp(line, "ra\n", 3) == 0)
 			return (0);
-		check_move_2(line);
+		return (check_move_2(line));
 	}
 	return (1);
 }

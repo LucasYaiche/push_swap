@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 14:20:05 by lyaiche           #+#    #+#             */
-/*   Updated: 2022/01/13 16:39:15 by lyaiche          ###   ########.fr       */
+/*   Updated: 2022/03/15 22:02:39 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,20 +44,19 @@ void	pa_checker(t_tab *tabs)
 	}
 }
 
-void	pb_checker(t_tab *tabs)
+void	ra_checker(t_tab *tabs)
 {
-	int	temp;
+	int	first;
+	int	len;
 
-	if (tabs->len_a != 0)
+	len = 0;
+	first = tabs->tab_a[0];
+	while (len < tabs->len_a)
 	{
-		temp = tabs->tab_a[0];
-		down(tabs->tab_b, tabs->len_b);
-		tabs->tab_b[0] = temp;
-		tabs->tab_a[0] = '\0';
-		up(tabs->tab_a, tabs->len_a);
-		tabs->len_a--;
-		tabs->len_b++;
+		tabs->tab_a[len] = tabs->tab_a[len + 1];
+		len++;
 	}
+	tabs->tab_a[len - 1] = first;
 }
 
 void	rra_checker(t_tab *tabs)
@@ -76,19 +75,4 @@ void	rra_checker(t_tab *tabs)
 		tabs->tab_a[len-- + 1] = temp;
 	}
 	tabs->tab_a[0] = last;
-}
-
-void	ra_checker(t_tab *tabs)
-{
-	int	first;
-	int	len;
-
-	len = 0;
-	first = tabs->tab_a[0];
-	while (len < tabs->len_a)
-	{
-		tabs->tab_a[len] = tabs->tab_a[len + 1];
-		len++;
-	}
-	tabs->tab_a[len - 1] = first;
 }

@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 14:23:19 by lyaiche           #+#    #+#             */
-/*   Updated: 2022/01/03 16:14:56 by lyaiche          ###   ########.fr       */
+/*   Updated: 2022/03/15 20:46:15 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ void	down(int *tab, int len);
 void	ft_radixsort(t_tab *tabs);
 void	index_list(t_tab *tabs);
 void	end(t_tab *tabs);
+int		isdouble(int *tab, int len);
 
 #endif

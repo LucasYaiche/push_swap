@@ -8,7 +8,7 @@ COMMON_SRC = check_argv.c fill_tab.c ft_atoi.c ft_calloc.c find_biggest.c\
 				ft_free.c ft_isdigit.c ft_putstr.c ft_strlen.c \
 				red_button.c ft_strncmp.c input_error.c lowest_cases.c up.c \
 				down.c sort.c moves1.c moves2.c moves3.c issort.c find_lowest.c  \
-				ft_radixsort.c create_indexlist.c end.c ft_putstr_error.c \
+				ft_radixsort.c create_indexlist.c end.c ft_putstr_error.c isdouble.c \
 				
 COMMON_OBJ = ${addprefix ${OBJDIR}, ${COMMON_SRC:%.c=%.o}}
 
