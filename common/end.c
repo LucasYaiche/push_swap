@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   end.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucasyaiche <lucasyaiche@student.42.fr>    +#+  +:+       +#+        */
+/*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 18:34:11 by lyaiche           #+#    #+#             */
-/*   Updated: 2022/01/23 15:36:02 by lucasyaiche      ###   ########.fr       */
+/*   Updated: 2022/03/18 16:16:15 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,7 @@ void	end(t_tab *tabs)
 		ft_free(&(tabs->tab_a));
 	if (tabs->tab_b)
 		ft_free(&(tabs->tab_b));
+	if (tabs->tab_index)
+		ft_free(&(tabs->tab_index));
 	exit(0);
 }

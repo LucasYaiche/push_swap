@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 13:45:08 by lyaiche           #+#    #+#             */
-/*   Updated: 2022/03/16 12:08:38 by lyaiche          ###   ########.fr       */
+/*   Updated: 2022/03/18 16:30:02 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,23 @@ void	verif(t_tab *tab)
 
 void	main_2(t_tab *tabs, char *line)
 {
-	if (tabs->len_b != 0)
-		panic_button(tabs);
 	if (check_move(line) == 2)
 	{
+		ft_free_char(&line);
 		clean(tabs);
 		ft_putstr("Error\n");
 	}
 	else if (issort(tabs->tab_a, tabs->len_a))
 	{
+		ft_free_char(&line);
 		clean(tabs);
 		ft_putstr("OK\n");
 	}
 	else
+	{
+		ft_free_char(&line);
 		panic_button(tabs);
+	}
 }
 
 int	main(int argc, char **argv)
@@ -62,6 +65,8 @@ int	main(int argc, char **argv)
 		if (!line || check_move(line) != 0)
 			break ;
 		sort_tab(line, &tabs);
+		ft_free_char(&line);
+		line = "";
 	}
 	main_2(&tabs, line);
 }

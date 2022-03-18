@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 14:23:19 by lyaiche           #+#    #+#             */
-/*   Updated: 2022/03/15 20:46:15 by lyaiche          ###   ########.fr       */
+/*   Updated: 2022/03/18 16:13:12 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <limits.h>
 # include <stdio.h>
+# include "../wraloc/wraloc.h"
 
 typedef struct s_tab
 {

@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 14:27:39 by lyaiche           #+#    #+#             */
-/*   Updated: 2022/03/15 21:42:37 by lyaiche          ###   ########.fr       */
+/*   Updated: 2022/03/18 16:14:56 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,5 @@ int	main(int argc, char **argv)
 	if (issort(tabs.tab_a, tabs.len_a))
 		end(&tabs);
 	what_case(&tabs);
+	end(&tabs);
 }
