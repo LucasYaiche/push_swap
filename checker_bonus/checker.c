@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 13:45:08 by lyaiche           #+#    #+#             */
-/*   Updated: 2022/03/18 16:30:02 by lyaiche          ###   ########.fr       */
+/*   Updated: 2022/03/19 18:38:27 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ void	verif(t_tab *tab)
 
 void	main_2(t_tab *tabs, char *line)
 {
-	if (check_move(line) == 2)
+	if (check_move(line) == 2 || (!(issort(tabs->tab_a, tabs->len_a))
+			&& check_move(line) == 1))
 	{
 		ft_free_char(&line);
 		clean(tabs);
-		ft_putstr("Error\n");
+		ft_putstr("KO\n");
 	}
 	else if (issort(tabs->tab_a, tabs->len_a))
 	{
