@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 13:45:08 by lyaiche           #+#    #+#             */
-/*   Updated: 2022/03/19 18:38:27 by lyaiche          ###   ########.fr       */
+/*   Updated: 2022/03/23 14:43:16 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,24 @@ void	main_2(t_tab *tabs, char *line)
 	}
 }
 
+void	initiate_value(t_tab *tabs, int argc)
+{
+	tabs->len_a = argc;
+	tabs->len_b = 0;
+	tabs->tab_a = ft_calloc(argc + 1);
+	tabs->tab_b = ft_calloc(argc + 1);
+}
+
 int	main(int argc, char **argv)
 {
 	char	*line;
 	t_tab	tabs;
 
-	if (argc <= 1 || !check_argv(--argc, ++argv))
+	if (argc <= 1)
 		input_error();
-	tabs.len_a = argc;
-	tabs.len_b = 0;
-	tabs.tab_a = ft_calloc(argc + 1);
-	tabs.tab_b = ft_calloc(argc + 1);
+	if (!check_argv(--argc, ++argv))
+		exit(1);
+	initiate_value(&tabs, argc);
 	if (!tabs.tab_a || !tabs.tab_b)
 		panic_button(&tabs);
 	fill_tab(&tabs, argv);
