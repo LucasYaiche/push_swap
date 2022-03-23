@@ -6,14 +6,13 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 14:23:19 by lyaiche           #+#    #+#             */
-/*   Updated: 2022/03/23 15:34:08 by lyaiche          ###   ########.fr       */
+/*   Updated: 2022/03/23 15:51:12 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
