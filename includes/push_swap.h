@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 14:23:19 by lyaiche           #+#    #+#             */
-/*   Updated: 2022/03/21 19:11:29 by lyaiche          ###   ########.fr       */
+/*   Updated: 2022/03/23 15:34:08 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_tab
 int		*ft_calloc(size_t len);
 size_t	ft_strlen(const char *str);
 void	fill_tab(t_tab *tabs, char **argv);
-int		ft_atoi(char *num);
+int		ft_atoi(char *num, t_tab *tabs);
 void	ft_putstr(char	*s);
 void	ft_putstr_error(char *s);
 void	panic_button(t_tab *tabs);

@@ -6,28 +6,11 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:46:10 by lyaiche           #+#    #+#             */
-/*   Updated: 2022/03/21 19:28:01 by lyaiche          ###   ########.fr       */
+/*   Updated: 2022/03/23 15:15:25 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	check_argv_2(char **argv, int i)
-{
-	if (argv[i][0] != '-')
-	{
-		if ((ft_strlen(argv[i]) >= 10)
-			&& (ft_strncmp("2147483647", argv[i], ft_strlen(argv[i])) < 0))
-			return (0);
-	}
-	else if (argv[i][0] == '-')
-	{	
-		if (ft_strlen(argv[i]) >= 11
-			&& ft_strncmp("-2147483648", argv[i], 11) < 0)
-			return (0);
-	}
-	return (1);
-}
 
 int	check_argv(int argc, char **argv)
 {
@@ -48,8 +31,6 @@ int	check_argv(int argc, char **argv)
 			if (ft_isdigit(argv[i][j]) && (argv[i][j + 1] == '-'))
 				return (0);
 		}
-		if (!check_argv_2(argv, i))
-			return (0);
 	}
 	return (1);
 }

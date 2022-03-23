@@ -6,7 +6,7 @@ PUSH_SWAP_SRC = push_swap.c
 
 COMMON_SRC = check_argv.c fill_tab.c ft_atoi.c ft_calloc.c find_biggest.c\
 				ft_free.c ft_isdigit.c ft_putstr.c ft_strlen.c \
-				red_button.c ft_strncmp.c input_error.c lowest_cases.c up.c \
+				panic_button.c ft_strncmp.c input_error.c lowest_cases.c up.c \
 				down.c sort.c moves1.c moves2.c moves3.c issort.c find_lowest.c  \
 				ft_radixsort.c create_indexlist.c end.c ft_putstr_error.c isdouble.c \
 				
@@ -17,9 +17,9 @@ PUSH_SWAP_OBJ = ${addprefix ${OBJDIR}, ${PUSH_SWAP_SRC:%.c=%.o}} ${COMMON_OBJ}
 #[PUSH_SWAP] Fonctions partie bonus#
 #==================================#
 
-PUSH_SWAP_BONUS_SRC = 	check_move.c checker.c sort_tab.c  moves1_checker.c \
-						moves2_checker.c moves3_checker.c get_next_line_utils.c \
-						get_next_line.c clean.c
+PUSH_SWAP_BONUS_SRC = 	check_move_bonus.c checker_bonus.c sort_tab_bonus.c  moves1_bonus.c \
+						moves2_bonus.c moves3_bonus.c get_next_line_utils_bonus.c \
+						get_next_line_bonus.c clean_bonus.c
 						
 PUSH_SWAP_BONUS_OBJ = ${addprefix ${OBJDIR}, ${PUSH_SWAP_BONUS_SRC:%.c=%.o}} ${COMMON_OBJ}
 
@@ -36,7 +36,7 @@ NAME = push_swap
 CHECKNAME = checker
 CFLAGS = -Wall -Wextra -Werror -D BUFFER_SIZE=${BUFFER_SIZE} ${SANIFLAG}
 SANIFLAG = -fsanitize=address -g
-BUFFER_SIZE = 1
+BUFFER_SIZE = 1000
 
 
 #=========#

@@ -6,11 +6,11 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 13:45:08 by lyaiche           #+#    #+#             */
-/*   Updated: 2022/03/23 14:43:16 by lyaiche          ###   ########.fr       */
+/*   Updated: 2022/03/23 15:32:39 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "checker_bonus.h"
 
 void	verif(t_tab *tab)
 {
@@ -23,7 +23,13 @@ void	verif(t_tab *tab)
 
 void	main_2(t_tab *tabs, char *line)
 {
-	if (check_move(line) == 2 || (!(issort(tabs->tab_a, tabs->len_a))
+	if (tabs->len_b != 0)
+	{
+		ft_free_char(&line);
+		clean(tabs);
+		ft_putstr("KO\n");
+	}
+	else if (check_move(line) == 2 || (!(issort(tabs->tab_a, tabs->len_a))
 			&& check_move(line) == 1))
 	{
 		ft_free_char(&line);
@@ -57,9 +63,9 @@ int	main(int argc, char **argv)
 	t_tab	tabs;
 
 	if (argc <= 1)
-		input_error();
-	if (!check_argv(--argc, ++argv))
 		exit(1);
+	if (!check_argv(--argc, ++argv))
+		input_error();
 	initiate_value(&tabs, argc);
 	if (!tabs.tab_a || !tabs.tab_b)
 		panic_button(&tabs);

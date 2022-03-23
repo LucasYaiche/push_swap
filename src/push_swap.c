@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 14:27:39 by lyaiche           #+#    #+#             */
-/*   Updated: 2022/03/23 14:36:12 by lyaiche          ###   ########.fr       */
+/*   Updated: 2022/03/23 15:00:23 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	main(int argc, char **argv)
 	t_tab	tabs;
 
 	if (argc <= 1)
-		input_error();
-	if (!check_argv(--argc, ++argv))
 		exit(1);
+	if (!check_argv(--argc, ++argv))
+		input_error();
 	tabs.len_a = argc;
 	tabs.len_b = 0;
 	tabs.tab_a = ft_calloc(argc + 1);

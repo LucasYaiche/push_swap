@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 14:53:30 by lyaiche           #+#    #+#             */
-/*   Updated: 2021/12/02 19:29:31 by lyaiche          ###   ########.fr       */
+/*   Updated: 2022/03/23 15:20:01 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	test(long long nb, const char *str, int sign)
 	return (1);
 }
 
-int	ft_atoi(char *num)
+int	ft_atoi(char *num, t_tab *tabs)
 {
 	int	negative;
 	int	answer;
@@ -43,9 +43,9 @@ int	ft_atoi(char *num)
 	while (*num >= 48 && *num <= 57)
 	{
 		if (!test(answer, num, negative))
-			return (0);
+			panic_button(tabs);
 		else if (test(answer, num, negative) == -1)
-			return (-1);
+			panic_button(tabs);
 		answer = answer * 10 + (*num - 48);
 		num++;
 	}

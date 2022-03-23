@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 13:45:26 by lyaiche           #+#    #+#             */
-/*   Updated: 2022/01/13 16:45:46 by lyaiche          ###   ########.fr       */
+/*   Updated: 2022/03/23 15:30:57 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#ifndef CHECKER_BONUS_H
+# define CHECKER_BONUS_H
 
-# include <stdio.h>
-# include <limits.h>
-# include <unistd.h>
 # include "../includes/push_swap.h"
 
 char	*get_next_line(int fd);
