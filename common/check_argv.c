@@ -6,7 +6,7 @@
 /*   By: lyaiche <lyaiche@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:46:10 by lyaiche           #+#    #+#             */
-/*   Updated: 2022/03/23 15:15:25 by lyaiche          ###   ########.fr       */
+/*   Updated: 2022/03/25 11:25:24 by lyaiche          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ int	check_argv(int argc, char **argv)
 		j = -1;
 		while (argv[i][++j])
 		{
-			if (!ft_isdigit(argv[i][j]) && argv[i][j] != '-'
-				&& argv[i][j] != ' ')
+			if (!ft_isdigit(argv[i][j]) && argv[i][j] != '-')
 				return (0);
 			if (argv[i][j] == '-' && argv[i][j + 1] == '-')
 				return (0);
